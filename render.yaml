@@ -24,7 +24,7 @@
 services:
   - name: opencatd
     image: mirrors2/opencatd-open
-    env: {}
+    env: docker
     instanceCount: 1
     plan: starter
     ports:
