@@ -3,5 +3,6 @@
 #     name: opencatd-open
 #     # oregon: frankfurt
 #     plan: free
+env: image
 image:
   url: docker.io/mirrors2/opencatd-open:latest
