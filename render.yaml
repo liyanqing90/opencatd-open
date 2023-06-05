@@ -30,7 +30,11 @@ services:
     ports:
       - port: 80
         protocol: tcp
-    volumes:
-      - name: opencatd-volume
+#     volumes:
+#       - name: opencatd-volume
+#         mountPath: /app/db
+#         hostPath: /etc/opencatd
+    disk:
+        name: opencatd-volume
         mountPath: /app/db
         hostPath: /etc/opencatd
