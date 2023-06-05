@@ -1,5 +1,7 @@
-services:
-  - type: web
-    name: opencatd-open
-    # oregon: frankfurt
-    plan: free
+# services:
+#   - type: web
+#     name: opencatd-open
+#     # oregon: frankfurt
+#     plan: free
+image:
+  url: docker.io/mirrors2/opencatd-open:latest
