@@ -3,9 +3,35 @@
 #     name: opencatd-open
 #     # oregon: frankfurt
 #     plan: free
+# services:
+#   - name: opencat
+#     buildCommand: docker build -t opencat .
+#     startCommand: docker run -p 80:80 opencat
+#     volumes:
+#       - name: opencat
+#         mountPath: /data
+        
+#         version: '3.7'
+# services: 
+#   opencatd:
+#     image: mirrors2/opencatd-open
+#     container_name: opencatd-open 
+#     restart: unless-stopped
+#     ports:
+#       - 80:80
+#     volumes:
+#       - /etc/opencatd:/app/db
 services:
-  - type: pserv
-    name: opencat
-    env: image
-    image:
-      url: docker.io/mirrors2/opencatd-open:latest
+  - name: opencatd
+    image: mirrors2/opencatd-open
+    env: {}
+    instanceCount: 1
+    plan: starter
+    ports:
+      - port: 80
+        protocol: tcp
+    volumes:
+      - name: opencatd-volume
+        mountPath: /app/db
+        host:
+          sourcePath: /etc/opencatd
