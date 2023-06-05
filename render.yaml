@@ -1,26 +1,3 @@
-# services:
-#   - type: web
-#     name: opencatd-open
-#     # oregon: frankfurt
-#     plan: free
-# services:
-#   - name: opencat
-#     buildCommand: docker build -t opencat .
-#     startCommand: docker run -p 80:80 opencat
-#     volumes:
-#       - name: opencat
-#         mountPath: /data
-        
-#         version: '3.7'
-# services: 
-#   opencatd:
-#     image: mirrors2/opencatd-open
-#     container_name: opencatd-open 
-#     restart: unless-stopped
-#     ports:
-#       - 80:80
-#     volumes:
-#       - /etc/opencatd:/app/db
 services:
   - name: opencatd
     image: mirrors2/opencatd-open
@@ -30,11 +7,11 @@ services:
     ports:
       - port: 80
         protocol: tcp
-#     volumes:
-#       - name: opencatd-volume
-#         mountPath: /app/db
-#         hostPath: /etc/opencatd
-    disk:
-        name: opencatd-volume
+    volumes:
+      - name: opencatd-volume
         mountPath: /app/db
         hostPath: /etc/opencatd
+#     disk:
+#         name: opencatd-volume
+#         mountPath: /app/db
+#         hostPath: /etc/opencatd
