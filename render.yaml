@@ -33,5 +33,4 @@ services:
     volumes:
       - name: opencatd-volume
         mountPath: /app/db
-        host:
-          sourcePath: /etc/opencatd
+        hostPath: /etc/opencatd
