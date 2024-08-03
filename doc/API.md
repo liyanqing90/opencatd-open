@@ -115,8 +115,9 @@ Resp:
 ### 重置用户 Token
 
 - URL: `/1/users/:id/reset`
+- URL: `/1/users/:id/reset?token={new user token}`
 - Method: `POST`
-- Description: 重置用户 Token
+- Description: 重置用户 Token 默认生成新 Token 也可以指定
 - Headers:
     - Authorization: Bearer {token}
 
@@ -180,7 +181,7 @@ Req:
 
 }
 ```
-api_type:不传的话默认为“openai”;当前可选值[openai,azure_openai]
+api_type:不传的话默认为“openai”;当前可选值[openai,azure,claude]
 endpoint: 当 api_type 为 azure_openai时传入（目前暂未使用）
 
 Resp:
@@ -236,3 +237,6 @@ Resp:
   }
 ]
 ```
+
+## Whisper接口
+### 与openai一致
